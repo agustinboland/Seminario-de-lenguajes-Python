@@ -18,7 +18,7 @@ notas_2 = [30, 95, 28, 84, 84, 43, 66, 51, 4, 11, 58, 10, 13, 34, 96, 71, 86, 37
 
 #a) 
 
-Nombres = nombres.replace('\n',' ').replace('\'','').strip(' ').split(',')
+Nombres = nombres.replace('\n',' ').replace('\'',' ').strip(' ').split(',')
 
 diccionario= {i:[j, k] for i, j, k in zip(Nombres,notas_1, notas_2)}
 
@@ -29,8 +29,8 @@ promedio_ind = list(map(lambda notas:sum(notas) / 2, diccionario.values()))
 for i, (clave, lista) in enumerate(diccionario.items()):
     lista.append(promedio_ind[i])
 
-for lista in diccionario.values():
-    print("El/la alumno/a",lista[0],"tiene promedio de", lista[2])
+for keys, lista in diccionario.items():
+    print("El/la alumno/a",keys ,"tiene promedio de", lista[2])
 
 #c) 
 
